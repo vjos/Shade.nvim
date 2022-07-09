@@ -418,11 +418,9 @@ end
 M.toggle = function()
   if state.active then
     remove_all_overlays()
-    print("off")
     state.active = false
   else
     create_tabpage_overlays(0)
-    print("on")
     state.active = true
   end
 end
@@ -430,7 +428,6 @@ end
 M.activate = function()
 	if not state.active then
 		create_tabpage_overlays(0)
-		print("on")
 		state.active = true
 	end
 end
@@ -438,7 +435,6 @@ end
 M.deactivate = function()
 	if state.active then
 		remove_all_overlays()
-		print("off")
 		state.active = false
 	end
 end

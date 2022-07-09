@@ -239,6 +239,8 @@ shade.init = function(opts)
     ["brightness_up"] = "brightness_up()",
     ["brightness_down"] = "brightness_down()",
     ["toggle"] = "toggle()",
+    ["activate"] = "activate()",
+    ["deactivate"] = "deactivate()",
   }
 
   if opts.keys ~= nil then
@@ -423,6 +425,22 @@ M.toggle = function()
     print("on")
     state.active = true
   end
+end
+
+M.activate = function()
+	if not state.active then
+		create_tabpage_overlays(0)
+		print("on")
+		state.active = true
+	end
+end
+
+M.deactivate = function()
+	if state.active then
+		remove_all_overlays()
+		print("off")
+		state.active = false
+	end
 end
 
 M.autocmd = function(event, winid)

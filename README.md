@@ -1,6 +1,7 @@
 # shade.nvim
 
 Shade is a Neovim plugin that dims your inactive windows, making it easier to see the active window at a glance.
+This fork adds .activate and .deactivate methods to the returned plugin, to help fix issues using the plugin with zenmode plugins.
 
 <img src="https://raw.githubusercontent.com/sunjon/images/master/shade_demo.gif" alt="screenshot" width="800"/>
 
